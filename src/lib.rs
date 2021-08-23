@@ -5,6 +5,13 @@ pub fn run(file_nm: String) {
     println!("Opening {}.\n", file_nm);
     let contents = fs::read_to_string(file_nm)
         .expect("There was a problem reading this file.");
+    loop {
+        draw(contents);
+        break;
+    }
+}
+
+fn draw(contents: String) {
     println!("Contents:\n\n{}", contents);
 }
 
