@@ -1,7 +1,18 @@
+use std::fs;
+
+
+pub fn run(file_nm: String) {
+    println!("Opening {}.\n", file_nm);
+    let contents = fs::read_to_string(file_nm)
+        .expect("There was a problem reading this file.");
+    println!("Contents:\n\n{}", contents);
+}
+
 
 pub struct Config {
     pub file_nm: String    
 }
+
 
 impl Config {
     pub fn new(args: Vec<String>) -> Result<Self, String> {
@@ -13,6 +24,7 @@ impl Config {
         })
     }
 }
+
 
 #[cfg(test)]
 mod tests {

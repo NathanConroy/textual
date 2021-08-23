@@ -7,5 +7,5 @@ fn main() {
         println!("{}", err_msg);
         process::exit(1);
     });
-    println!("{}", config.file_nm);
+    textual::run(config.file_nm);
 }
