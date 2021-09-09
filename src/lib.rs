@@ -10,8 +10,11 @@ pub fn run(file_nm: String) {
     loop {
         draw(&contents);
         let ch = get_user_input() as u32;
-        if let Some('q') = char::from_u32(ch) {
-            break;
+        match char::from_u32(ch) {
+            Some('q') => {
+                break;
+            },
+            _ => ()
         }
     }
     close();
