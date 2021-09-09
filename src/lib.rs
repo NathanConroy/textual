@@ -40,7 +40,7 @@ fn read_file(file_nm: String) -> String {
 fn draw(contents: &String) {
     ncurses::clear();
     ncurses::addstr(
-        format!("Contents:\n\n{}", contents).as_str()
+        format!("{}\n\nEnter 'q' to quit: ", contents).as_str()
     );
 }
 
